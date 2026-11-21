@@ -97,7 +97,7 @@ try {
   query.maxLength = MAX_QUERY_LENGTH;
   byId("own-question").addEventListener("submit", async event => {
     event.preventDefault();
-    if (submit.disabled) return;
+    if (submit.getAttribute("aria-disabled") === "true") return;
     const text = query.value.trim();
     if (!text || text.length > MAX_QUERY_LENGTH) {
       feedback.hidden = false;
@@ -105,7 +105,8 @@ try {
       return;
     }
     feedback.hidden = true;
-    submit.disabled = questionSelect.disabled = query.readOnly = true;
+    submit.setAttribute("aria-disabled", "true");
+    questionSelect.disabled = query.readOnly = true;
     try {
       if (!index) {
         feedback.hidden = false;
@@ -128,7 +129,8 @@ try {
       feedback.hidden = false;
       feedback.textContent = "Could not load the search index. Try again.";
     } finally {
-      submit.disabled = questionSelect.disabled = query.readOnly = false;
+      submit.removeAttribute("aria-disabled");
+      questionSelect.disabled = query.readOnly = false;
     }
   });
 

@@ -55,7 +55,7 @@ select, input { width: 100%; max-width: 100%; min-height: 46px; border: 1px soli
 .query-bar { display: flex; gap: .55rem; flex-wrap: wrap; }
 .query-bar input { flex: 2 1 14rem; }
 .query-bar button { min-height: 46px; padding: .5rem .75rem; color: var(--accent); background: var(--accent-weak); border: 1px solid var(--rule); border-radius: .35rem; font: 650 1rem system-ui; cursor: pointer; }
-.query-bar button:disabled { opacity: .7; cursor: wait; }
+.query-bar button[aria-disabled="true"] { opacity: .7; cursor: wait; }
 .expected { margin-top: 0.95rem; border-left: 3px solid var(--accent); padding: .6rem .7rem; background: var(--accent-weak); border-radius: 0 .35rem .35rem 0; }
 .expected ul { margin: .45rem 0; padding-inline-start: 1.25rem; font-size: .93rem; line-height: 1.55; }
 .expected p { font-size: .88rem; color: var(--muted); line-height: 1.5; }
