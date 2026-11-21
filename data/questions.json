@@ -1,0 +1,62 @@
+[
+  {
+    "id": "Q01",
+    "question": "How can a visitor read the narration instead of listening at a stop?",
+    "expected": ["A01"],
+    "why": "The printed booklet and on-screen transcript both contain the stop narration."
+  },
+  {
+    "id": "Q02",
+    "question": "Which subtitle track should I turn on at the projector?",
+    "expected": ["A03"],
+    "why": "The cinema procedure covers switching on captions for the projected film."
+  },
+  {
+    "id": "Q03",
+    "question": "Can I push my entry booking back?",
+    "expected": ["B01"],
+    "why": "The timed admission procedure describes moving the visit and replacing its entry code."
+  },
+  {
+    "id": "Q04",
+    "question": "My confirmation email is missing and my replacement code shows already used.",
+    "expected": ["B02", "B04"],
+    "why": "One procedure covers finding the original booking. The other checks a used code before replacing it."
+  },
+  {
+    "id": "Q05",
+    "question": "How do I reach the upstairs exhibition without stairs?",
+    "expected": ["C01"],
+    "why": "The courtyard ramp and lift provide a step-free route to the upper gallery."
+  },
+  {
+    "id": "Q06",
+    "question": "A visitor left a wallet. How do I record it and give it back?",
+    "expected": ["D01", "D02"],
+    "why": "The handover procedure records found items and the collection procedure covers their release."
+  },
+  {
+    "id": "Q07",
+    "question": "Where can pupils eat their sandwiches if it pours?",
+    "expected": ["E02"],
+    "why": "The indoor lunch procedure gives a wet-weather space for school groups."
+  },
+  {
+    "id": "Q08",
+    "question": "How should we admit people while the booking service is offline?",
+    "expected": ["F02"],
+    "why": "The outage procedure uses the printed list until the booking service returns."
+  },
+  {
+    "id": "Q09",
+    "question": "Someone paid twice for the same ticket. Who handles the refund?",
+    "expected": ["B03"],
+    "why": "The duplicate payment procedure identifies the admissions supervisor."
+  },
+  {
+    "id": "Q10",
+    "question": "Can I reprint the admission code while the front gate reader is broken?",
+    "expected": ["B04"],
+    "why": "The scanner recovery procedure routes reader faults to the staffed desk."
+  }
+]

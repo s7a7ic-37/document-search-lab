@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare keyword and local semantic search on a set of fictional museum procedures.">
+  <title>Document Search Lab</title>
+  <script src="/theme.js"></script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" type="module"></script>
+</head>
+<body>
+  <header class="bar">
+    <div class="wrap bar-inner">
+      <a class="brand" href="/"><img src="/favicon.svg" width="28" height="28" alt="">Document Search Lab</a>
+      <a class="back" href="https://portfolio.artemislab.co.uk/#projects">← All projects</a>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="intro" aria-labelledby="intro-heading">
+      <h1 id="intro-heading">Compare document search</h1>
+      <p>Pick a question and see how two search methods rank fictional museum procedures.</p>
+    </section>
+    <p id="load-state" role="status">Loading the search report…</p>
+    <noscript><p>Enable JavaScript to explore the search results.</p></noscript>
+    <div id="report" hidden>
+      <section class="panel question" aria-labelledby="question-title">
+        <label id="question-title" for="question">Sample question</label>
+        <select id="question" aria-describedby="question-note"></select>
+        <p id="question-note" class="muted"></p>
+        <div class="expected">
+          <h3>Expected procedures</h3>
+          <ul id="expected-list"></ul>
+          <p id="why"></p>
+        </div>
+      </section>
+      <p id="comparison" class="comparison" role="status"></p>
+      <div class="results" id="results"></div>
+      <section class="panel overview" aria-labelledby="overview-title">
+        <div>
+          <h2 id="overview-title">Evaluation summary</h2>
+          <p class="muted" id="evaluated"></p>
+        </div>
+        <table class="summary">
+          <thead><tr><th scope="col">Method</th><th scope="col">Recall at 3</th><th scope="col">MRR at 3</th></tr></thead>
+          <tbody id="summary-rows"></tbody>
+        </table>
+      </section>
+      <details class="panel method">
+        <summary>How the evaluation works</summary>
+        <p>Keyword search uses TF-IDF to give terms that are common in a document and rare in the library more weight. Semantic search compares the same text in a smaller topic space made with truncated SVD.</p>
+        <p>Recall at 3 measures how many expected documents are in the first three results. Mean reciprocal rank (MRR) gives more weight to finding the first expected document near the top. Both numbers are averaged across the sample questions.</p>
+        <p>Both models are fitted on the documents only and can miss words absent from those documents. This is a small synthetic example, so the scores describe these questions. The dashboard loads a report generated offline.</p>
+      </details>
+    </div>
+  </main>
+  <footer class="wrap footer"><a href="https://github.com/s7a7ic-37/document-search-lab">Project source ↗</a></footer>
+</body>
+</html>

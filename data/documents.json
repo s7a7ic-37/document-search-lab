@@ -1,0 +1,92 @@
+[
+  {
+    "id": "A01",
+    "title": "Read the audio tour",
+    "text": "Each numbered stop on the audio tour has a transcript. Scan the stop marker, open the Transcript tab and enlarge the text if needed. The front desk has a large-print booklet with the same narration."
+  },
+  {
+    "id": "A02",
+    "title": "Borrow a listening receiver",
+    "text": "Visitors can borrow a portable receiver for the audio tour at the front desk. Pair the receiver with a neckloop and select the stop number. A staff member can replay the narration at a comfortable volume."
+  },
+  {
+    "id": "A03",
+    "title": "Add subtitles to the cinema",
+    "text": "The projection desk can enable captions for the film in the small cinema. Check the subtitle track on the projector before doors open. The film captions describe speech and relevant sound."
+  },
+  {
+    "id": "A04",
+    "title": "Reset an audio stop tablet",
+    "text": "When a stop tablet is blank, check the audio tour app is open and the screen power is on. Use the staff reset card to restart that exhibit. The tablet displays the stop marker and its transcript after restart."
+  },
+  {
+    "id": "B01",
+    "title": "Move a timed admission",
+    "text": "Open the ticket booking and use Change visit to move unused admissions to a later date. Keep the same ticket type. The original entry code becomes invalid after rebooking, and the new code is shown on the confirmation page."
+  },
+  {
+    "id": "B02",
+    "title": "Find an admission code",
+    "text": "The confirmation email shows a square entry code for each timed admission. If the booking email is missing, the front desk can look up the ticket using the last name and visit date. A replacement code must be sent to the original booking address."
+  },
+  {
+    "id": "B03",
+    "title": "Handle a double charge",
+    "text": "If two card payments appear for one ticket booking, check whether one is still pending. Send confirmed duplicate charges to the admissions supervisor with the two receipt references. The admissions supervisor starts the refund against the original payment method."
+  },
+  {
+    "id": "B04",
+    "title": "Recover at the entry scanner",
+    "text": "If the ticket scanner shows already used, check the entry history before issuing a replacement code. A code can be used once. For a gate reader fault, take the admission confirmation to the staffed front desk."
+  },
+  {
+    "id": "C01",
+    "title": "Step-free entrance to the upper gallery",
+    "text": "Enter by the courtyard ramp and take the lift to level two. There are no steps between the courtyard doors and the lift. Wide turning space is available outside the upper gallery."
+  },
+  {
+    "id": "C02",
+    "title": "Keep a route open during lift maintenance",
+    "text": "When the public lift is closed for maintenance, move the level-two talks to the ground-floor studio. Mark the courtyard route on the board and tell the front desk which sessions moved. Keep the service lift for staff."
+  },
+  {
+    "id": "C03",
+    "title": "Plan a quiet visit",
+    "text": "The first Saturday session lowers the gallery volume and leaves the lights steady. The study room is a quiet place to pause. Visitors can step out of a talk and return using the same admission."
+  },
+  {
+    "id": "D01",
+    "title": "Hand over found property",
+    "text": "Tag found belongings with the place and time, then take them to the duty desk. The lost property register records the description and shelf. Never keep a found phone or wallet in the gallery office."
+  },
+  {
+    "id": "D02",
+    "title": "Collect a lost item",
+    "text": "The duty desk releases registered property after the claimant describes it without prompting. Check the shelf record, close the register entry and record the collection time. Valuable belongings stay locked until collection."
+  },
+  {
+    "id": "D03",
+    "title": "Return borrowed umbrellas",
+    "text": "Put borrowed umbrellas into the rack by the courtyard doors. Wipe the handle and let the canopy dry before lending it out again. An umbrella left behind by a visitor goes to the duty desk as found property."
+  },
+  {
+    "id": "E01",
+    "title": "Prepare a school workshop",
+    "text": "The education host checks the class size and adult count in the workshop booking. Set out group workstations and printed activity sheets before the teacher arrives. Escort the group from the courtyard to the studio together."
+  },
+  {
+    "id": "E02",
+    "title": "Move a group lunch indoors",
+    "text": "In heavy rain the schools host opens the studio for packed lunches. Move the workshop trolleys out and place a cleaning kit near the door. Let the teacher know where the group can leave bags during lunch."
+  },
+  {
+    "id": "F01",
+    "title": "Restore the booking register",
+    "text": "If the booking register is damaged, copy the last verified backup into a temporary workspace. Compare the restored visit count and latest ticket reference before releasing the restored register. Keep the damaged copy for investigation."
+  },
+  {
+    "id": "F02",
+    "title": "Keep admitting visitors during an outage",
+    "text": "When the booking service is offline, use the current day's printed admission list. Record arrivals and manually reconcile them when the service returns. Do not issue refunds or new tickets against the offline list."
+  }
+]

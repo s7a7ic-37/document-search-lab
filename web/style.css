@@ -1,0 +1,74 @@
+:root {
+  font-family: system-ui, sans-serif;
+  --paper: #f6f2f7;
+  --panel: #fffcff;
+  --text: #272234;
+  --muted: #594c64;
+  --rule: #dbcfe0;
+  --accent: #632c78;
+  --accent-weak: #ede0f2;
+  --good: #215745;
+  --good-weak: #e2efe8;
+}
+
+:root[data-theme="dark"] {
+  --paper: #1b1621;
+  --panel: #281f2d;
+  --text: #f5ebf9;
+  --muted: #cab9d4;
+  --rule: #504156;
+  --accent: #e7acf0;
+  --accent-weak: #413049;
+  --good: #abe9cd;
+  --good-weak: #283e35;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--text); }
+[hidden] { display: none !important; }
+.wrap { width: min(calc(100% - 2rem), 68rem); margin-inline: auto; }
+a { color: var(--accent); text-underline-offset: 0.16em; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+h1, h2, h3, p { margin: 0; }
+.bar { background: var(--panel); border-bottom: 1px solid var(--rule); }
+.bar-inner { display: flex; gap: 0.1rem 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; padding-block: 0.4rem; }
+.brand, .back { display: inline-flex; align-items: center; gap: 0.55rem; min-height: 44px; }
+.brand { font-weight: 730; text-decoration: none; color: var(--text); }
+.back { font-size: 0.9rem; }
+.intro { padding-block: clamp(1.4rem, 4vw, 2.75rem) 1.25rem; }
+h1 { font-size: clamp(2.1rem, 5vw, 3.85rem); line-height: 1.04; letter-spacing: -0.055em; font-weight: 760; }
+.intro p { margin-top: 0.7rem; color: var(--muted); line-height: 1.5; }
+h2 { font-size: 1.2rem; line-height: 1.35; }
+h3 { font-size: 1rem; line-height: 1.35; }
+.muted { color: var(--muted); font-size: 0.9rem; line-height: 1.5; margin-top: 0.22rem; }
+.panel { background: var(--panel); border: 1px solid var(--rule); border-radius: .5rem; padding: clamp(.85rem, 2.3vw, 1.45rem); }
+.overview { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: .8rem; align-items: start; margin-top: .85rem; }
+.summary { width: 100%; border-collapse: collapse; text-align: left; font-size: .88rem; font-variant-numeric: tabular-nums; }
+.summary th, .summary td { padding: .45rem .15rem; }
+.summary thead th { font-weight: 600; color: var(--muted); }
+.summary tbody tr { border-top: 1px solid var(--rule); }
+.summary th:first-child { width: 44%; }
+.summary td { font-weight: 700; }
+label { display: block; font-weight: 680; margin-bottom: 0.35rem; }
+select { width: 100%; max-width: 100%; min-height: 46px; border: 1px solid var(--rule); padding: .5rem; color: var(--text); background: var(--panel); font: inherit; border-radius: .35rem; text-overflow: ellipsis; }
+.expected { margin-top: 0.95rem; border-left: 3px solid var(--accent); padding: .6rem .7rem; background: var(--accent-weak); border-radius: 0 .35rem .35rem 0; }
+.expected ul { margin: .45rem 0; padding-inline-start: 1.25rem; font-size: .93rem; line-height: 1.55; }
+.expected p { font-size: .88rem; color: var(--muted); line-height: 1.5; }
+.comparison { margin: 1.05rem 0 .55rem; font-size: .9rem; color: var(--muted); }
+.results { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem; align-items: start; }
+.ranked { list-style: none; margin: .65rem 0 0; padding: 0; }
+.ranked li { border-top: 1px solid var(--rule); padding-block: .75rem; }
+.ranked li:last-child { padding-bottom: 0; }
+.result-label { font-size: .78rem; color: var(--muted); margin-bottom: .35rem; }
+.result-label .match { padding: .1rem .45rem; margin-left: .35rem; border-radius: .25rem; color: var(--good); background: var(--good-weak); font-weight: 650; }
+.result-text { font-size: .89rem; color: var(--muted); line-height: 1.52; margin-top: .26rem; }
+.missed { margin-top: .8rem; font-size: .86rem; font-weight: 650; color: var(--accent); }
+.method { margin-top: 1rem; }
+summary { cursor: pointer; padding-block: .65rem; min-height: 44px; color: var(--accent); font-weight: 680; }
+.method p { margin-top: .5rem; line-height: 1.55; color: var(--muted); font-size: .9rem; }
+.footer { padding-block: .75rem 1.35rem; font-size: .9rem; }
+.footer a { display: inline-flex; align-items: center; min-height: 44px; }
+
+@media (max-width: 650px) {
+  .overview, .results { grid-template-columns: minmax(0, 1fr); }
+}
