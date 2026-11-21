@@ -1,7 +1,9 @@
 import json
 import unittest
 
-from build_eval import ROOT, build_report, evaluate, measure, rank
+from numpy.testing import assert_allclose
+
+from build_eval import ROOT, build_report, evaluate, export_index, fit_documents, measure, rank
 
 
 class EvaluationTests(unittest.TestCase):
@@ -34,6 +36,20 @@ class EvaluationTests(unittest.TestCase):
     def test_published_report_matches_the_offline_build(self):
         published = json.loads((ROOT / "web/evaluation.json").read_text(encoding="utf-8"))
         self.assertEqual(published, self.report)
+
+    def test_exported_browser_index_matches_the_fitted_models(self):
+        documents = self.report["documents"]
+        actual = json.loads((ROOT / "web/search-index.json").read_text(encoding="utf-8"))
+        fitted = export_index(documents, fit_documents(documents))
+        for field in ("document_ids", "stop_words", "top_k"):
+            self.assertEqual(actual[field], fitted[field])
+        assert_allclose(actual["document_topics"], fitted["document_topics"], atol=1e-12, rtol=0)
+        self.assertEqual(actual["vocabulary"].keys(), fitted["vocabulary"].keys())
+        for term, entry in fitted["vocabulary"].items():
+            indexed = actual["vocabulary"][term]
+            self.assertAlmostEqual(indexed["idf"], entry["idf"], places=12)
+            assert_allclose(indexed["projection"], entry["projection"], atol=1e-12, rtol=0)
+            assert_allclose(indexed["postings"], entry["postings"], atol=1e-12, rtol=0)
 
 
 if __name__ == "__main__":
