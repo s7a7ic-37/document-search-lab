@@ -1,8 +1,8 @@
 export const MAX_QUERY_LENGTH = 240;
 
-function rank(documentIds, scores, limit) {
+function rank(documentIds, scores, shared, limit) {
   return scores.flatMap((score, i) => score > 1e-8
-    ? [{ id: documentIds[i], score: Number(score.toFixed(8)) }]
+    ? [{ id: documentIds[i], score: Number(score.toFixed(8)), shared_terms: shared[i] }]
     : []
   ).sort((a, b) => (b.score - a.score) || a.id.localeCompare(b.id, "en")).slice(0, limit);
 }
@@ -24,14 +24,19 @@ export function search(query, index) {
 
   const weights = [...counts].map(([term, frequency]) => {
     const entry = index.vocabulary[term];
-    return { entry, weight: (1 + Math.log(frequency)) * entry.idf };
+    return { term, entry, weight: (1 + Math.log(frequency)) * entry.idf };
   });
   const length = Math.hypot(...weights.map(item => item.weight));
   const lexical = index.document_ids.map(() => 0);
+  const overlap = index.document_ids.map(() => []);
   const projected = index.document_topics[0].map(() => 0);
-  for (const { entry, weight } of weights) {
+  for (const { term, entry, weight } of weights) {
     const normalised = weight / length;
-    for (const [row, value] of entry.postings) lexical[row] += normalised * value;
+    for (const [row, value] of entry.postings) {
+      const contribution = normalised * value;
+      lexical[row] += contribution;
+      overlap[row].push({ term, contribution: Number(contribution.toFixed(10)) });
+    }
     entry.projection.forEach((value, component) => { projected[component] += normalised * value; });
   }
 
@@ -39,8 +44,10 @@ export function search(query, index) {
   const semantic = index.document_topics.map(vector => topicLength
     ? vector.reduce((sum, value, i) => sum + value * projected[i], 0) / topicLength
     : 0);
+  const shared = overlap.map(terms => terms.sort((a, b) => b.contribution - a.contribution || (a.term < b.term ? -1 : 1))
+    .slice(0, 3).map(({ term }) => term));
   return {
-    keyword: rank(index.document_ids, lexical, index.top_k),
-    semantic: rank(index.document_ids, semantic, index.top_k),
+    keyword: rank(index.document_ids, lexical, shared, index.top_k),
+    semantic: rank(index.document_ids, semantic, shared, index.top_k),
   };
 }

@@ -105,29 +105,55 @@
         "keyword": [
           {
             "id": "A01",
-            "score": 0.21173592
+            "score": 0.21173592,
+            "shared_terms": [
+              "stop",
+              "read",
+              "narration"
+            ]
           },
           {
             "id": "A02",
-            "score": 0.17623194
+            "score": 0.17623194,
+            "shared_terms": [
+              "listening",
+              "narration",
+              "stop"
+            ]
           },
           {
             "id": "A04",
-            "score": 0.08693966
+            "score": 0.08693966,
+            "shared_terms": [
+              "stop"
+            ]
           }
         ],
         "semantic": [
           {
             "id": "A01",
-            "score": 0.98421438
+            "score": 0.98421438,
+            "shared_terms": [
+              "stop",
+              "read",
+              "narration"
+            ]
           },
           {
             "id": "A04",
-            "score": 0.94910027
+            "score": 0.94910027,
+            "shared_terms": [
+              "stop"
+            ]
           },
           {
             "id": "A02",
-            "score": 0.9267512
+            "score": 0.9267512,
+            "shared_terms": [
+              "listening",
+              "narration",
+              "stop"
+            ]
           }
         ]
       },
@@ -155,21 +181,33 @@
         "keyword": [
           {
             "id": "A03",
-            "score": 0.31101878
+            "score": 0.31101878,
+            "shared_terms": [
+              "projector",
+              "subtitle",
+              "subtitle track"
+            ]
           }
         ],
         "semantic": [
           {
             "id": "A03",
-            "score": 0.99798052
+            "score": 0.99798052,
+            "shared_terms": [
+              "projector",
+              "subtitle",
+              "subtitle track"
+            ]
           },
           {
             "id": "D03",
-            "score": 0.60848382
+            "score": 0.60848382,
+            "shared_terms": []
           },
           {
             "id": "B03",
-            "score": 0.43897744
+            "score": 0.43897744,
+            "shared_terms": []
           }
         ]
       },
@@ -197,29 +235,51 @@
         "keyword": [
           {
             "id": "B02",
-            "score": 0.18635401
+            "score": 0.18635401,
+            "shared_terms": [
+              "booking",
+              "entry"
+            ]
           },
           {
             "id": "B01",
-            "score": 0.14847262
+            "score": 0.14847262,
+            "shared_terms": [
+              "entry",
+              "booking"
+            ]
           },
           {
             "id": "B04",
-            "score": 0.14520804
+            "score": 0.14520804,
+            "shared_terms": [
+              "entry"
+            ]
           }
         ],
         "semantic": [
           {
             "id": "B01",
-            "score": 0.95103532
+            "score": 0.95103532,
+            "shared_terms": [
+              "entry",
+              "booking"
+            ]
           },
           {
             "id": "B02",
-            "score": 0.89295096
+            "score": 0.89295096,
+            "shared_terms": [
+              "booking",
+              "entry"
+            ]
           },
           {
             "id": "B04",
-            "score": 0.71896437
+            "score": 0.71896437,
+            "shared_terms": [
+              "entry"
+            ]
           }
         ]
       },
@@ -248,29 +308,57 @@
         "keyword": [
           {
             "id": "B02",
-            "score": 0.43985633
+            "score": 0.43985633,
+            "shared_terms": [
+              "email",
+              "code",
+              "confirmation email"
+            ]
           },
           {
             "id": "B04",
-            "score": 0.33892976
+            "score": 0.33892976,
+            "shared_terms": [
+              "used",
+              "code",
+              "shows used"
+            ]
           },
           {
             "id": "B01",
-            "score": 0.0847956
+            "score": 0.0847956,
+            "shared_terms": [
+              "code",
+              "confirmation"
+            ]
           }
         ],
         "semantic": [
           {
             "id": "B04",
-            "score": 0.97943041
+            "score": 0.97943041,
+            "shared_terms": [
+              "used",
+              "code",
+              "shows used"
+            ]
           },
           {
             "id": "B02",
-            "score": 0.97439928
+            "score": 0.97439928,
+            "shared_terms": [
+              "email",
+              "code",
+              "confirmation email"
+            ]
           },
           {
             "id": "B01",
-            "score": 0.84774632
+            "score": 0.84774632,
+            "shared_terms": [
+              "code",
+              "confirmation"
+            ]
           }
         ]
       },
@@ -323,29 +411,49 @@
         "keyword": [
           {
             "id": "D03",
-            "score": 0.16312902
+            "score": 0.16312902,
+            "shared_terms": [
+              "left",
+              "visitor"
+            ]
           },
           {
             "id": "D02",
-            "score": 0.09875459
+            "score": 0.09875459,
+            "shared_terms": [
+              "record"
+            ]
           },
           {
             "id": "D01",
-            "score": 0.09226717
+            "score": 0.09226717,
+            "shared_terms": [
+              "wallet"
+            ]
           }
         ],
         "semantic": [
           {
             "id": "D01",
-            "score": 0.97052794
+            "score": 0.97052794,
+            "shared_terms": [
+              "wallet"
+            ]
           },
           {
             "id": "D02",
-            "score": 0.9392775
+            "score": 0.9392775,
+            "shared_terms": [
+              "record"
+            ]
           },
           {
             "id": "D03",
-            "score": 0.78686802
+            "score": 0.78686802,
+            "shared_terms": [
+              "left",
+              "visitor"
+            ]
           }
         ]
       },
@@ -397,29 +505,51 @@
         "keyword": [
           {
             "id": "F02",
-            "score": 0.38762224
+            "score": 0.38762224,
+            "shared_terms": [
+              "offline",
+              "service",
+              "booking service"
+            ]
           },
           {
             "id": "C02",
-            "score": 0.0554378
+            "score": 0.0554378,
+            "shared_terms": [
+              "service"
+            ]
           },
           {
             "id": "B02",
-            "score": 0.04791078
+            "score": 0.04791078,
+            "shared_terms": [
+              "booking"
+            ]
           }
         ],
         "semantic": [
           {
             "id": "F02",
-            "score": 0.98758383
+            "score": 0.98758383,
+            "shared_terms": [
+              "offline",
+              "service",
+              "booking service"
+            ]
           },
           {
             "id": "F01",
-            "score": 0.85498085
+            "score": 0.85498085,
+            "shared_terms": [
+              "booking"
+            ]
           },
           {
             "id": "B03",
-            "score": 0.41396812
+            "score": 0.41396812,
+            "shared_terms": [
+              "booking"
+            ]
           }
         ]
       },
@@ -447,29 +577,49 @@
         "keyword": [
           {
             "id": "B03",
-            "score": 0.17292398
+            "score": 0.17292398,
+            "shared_terms": [
+              "refund",
+              "ticket"
+            ]
           },
           {
             "id": "B01",
-            "score": 0.09720211
+            "score": 0.09720211,
+            "shared_terms": [
+              "ticket"
+            ]
           },
           {
             "id": "B04",
-            "score": 0.05745401
+            "score": 0.05745401,
+            "shared_terms": [
+              "ticket"
+            ]
           }
         ],
         "semantic": [
           {
             "id": "B01",
-            "score": 0.87754152
+            "score": 0.87754152,
+            "shared_terms": [
+              "ticket"
+            ]
           },
           {
             "id": "B03",
-            "score": 0.86499498
+            "score": 0.86499498,
+            "shared_terms": [
+              "refund",
+              "ticket"
+            ]
           },
           {
             "id": "B02",
-            "score": 0.65759567
+            "score": 0.65759567,
+            "shared_terms": [
+              "ticket"
+            ]
           }
         ]
       },
@@ -497,29 +647,57 @@
         "keyword": [
           {
             "id": "B04",
-            "score": 0.31358594
+            "score": 0.31358594,
+            "shared_terms": [
+              "code",
+              "gate",
+              "gate reader"
+            ]
           },
           {
             "id": "B02",
-            "score": 0.20618111
+            "score": 0.20618111,
+            "shared_terms": [
+              "code",
+              "admission code",
+              "admission"
+            ]
           },
           {
             "id": "B01",
-            "score": 0.10382073
+            "score": 0.10382073,
+            "shared_terms": [
+              "code",
+              "admission"
+            ]
           }
         ],
         "semantic": [
           {
             "id": "B02",
-            "score": 0.97991754
+            "score": 0.97991754,
+            "shared_terms": [
+              "code",
+              "admission code",
+              "admission"
+            ]
           },
           {
             "id": "B04",
-            "score": 0.97241151
+            "score": 0.97241151,
+            "shared_terms": [
+              "code",
+              "gate",
+              "gate reader"
+            ]
           },
           {
             "id": "B01",
-            "score": 0.84969194
+            "score": 0.84969194,
+            "shared_terms": [
+              "code",
+              "admission"
+            ]
           }
         ]
       },

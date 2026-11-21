@@ -7,7 +7,7 @@ const read = name => JSON.parse(readFileSync(new URL("../web/" + name, import.me
 const report = read("evaluation.json");
 const index = read("search-index.json");
 
-test("browser search returns the offline Python ranks and eight-place scores for every case", () => {
+test("browser search matches Python ranks, eight-place scores and shared terms for every case", () => {
   for (const sample of report.cases) {
     assert.deepEqual(search(sample.question, index), sample.rankings, sample.id);
   }
@@ -17,6 +17,8 @@ test("case, punctuation and repeated terms are supported in new searches", () =>
   const searchText = "restore the booking register register";
   const rankings = search(searchText, index);
   assert.equal(rankings.keyword[0].id, "F01");
+  assert.ok(rankings.keyword[0].shared_terms.includes("booking register"));
+  assert.ok(rankings.keyword.every(result => result.shared_terms.length > 0));
   assert.deepEqual(search("RESTORE, the BOOKING REGISTER register?", index), rankings);
   assert.ok(rankings.semantic.length);
 });

@@ -45,12 +45,15 @@ function renderRankings(rankings, documents, record) {
     if (record) {
       panel.append(element("p", record.metrics[key].hits + " of " + record.expected.length + " expected found", "missed"));
     }
-    ranking.forEach(({ id, score }, rank) => {
+    ranking.forEach(({ id, score, shared_terms }, rank) => {
       const doc = documents.get(id);
       const item = document.createElement("li");
       const label = element("p", String(rank + 1) + ". " + id + " · Similarity " + score.toFixed(3), "result-label");
       if (record?.expected.includes(id)) label.append(element("span", "Expected", "match"));
       item.append(label, element("h3", doc.title), element("p", doc.text, "result-text"));
+      if (shared_terms) item.append(element("p", shared_terms.length
+        ? "Shared indexed terms: " + shared_terms.join(", ")
+        : "No shared indexed terms", "muted"));
       list.append(item);
     });
     if (ranking.length) panel.append(list);

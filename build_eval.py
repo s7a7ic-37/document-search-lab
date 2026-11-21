@@ -40,12 +40,12 @@ def fit_documents(documents):
 
 
 def evaluate(documents, questions, fitted=None):
-    ids = {doc["id"] for doc in documents}
+    rows = {doc["id"]: i for i, doc in enumerate(documents)}
     if not questions or len({q["id"] for q in questions}) != len(questions):
         raise ValueError("Provide questions with distinct IDs.")
     for question in questions:
         expected = question["expected"]
-        if not expected or len(set(expected)) != len(expected) or not set(expected) <= ids:
+        if not expected or len(set(expected)) != len(expected) or not set(expected) <= rows.keys():
             raise ValueError(f"Invalid relevance labels for {question['id']}.")
 
     vectorizer, document_terms, topics, document_topics = fitted or fit_documents(documents)
@@ -55,12 +55,18 @@ def evaluate(documents, questions, fitted=None):
 
     terms_scores = cosine_similarity(question_terms, document_terms)
     topics_scores = cosine_similarity(question_topics, document_topics)
+    terms = vectorizer.get_feature_names_out()
     cases = []
     for index, question in enumerate(questions):
         rankings = {
             "keyword": rank(documents, terms_scores[index]),
             "semantic": rank(documents, topics_scores[index]),
         }
+        for results in rankings.values():
+            for result in results:
+                overlap = question_terms[index].multiply(document_terms[rows[result["id"]]]).tocoo()
+                shared = [(terms[col], round(float(weight), 10)) for col, weight in zip(overlap.col, overlap.data, strict=True)]
+                result["shared_terms"] = [term for term, _ in sorted(shared, key=lambda item: (-item[1], item[0]))[:3]]
         metrics = {name: measure(results, question["expected"]) for name, results in rankings.items()}
         cases.append({**question, "rankings": rankings, "metrics": metrics})
 
